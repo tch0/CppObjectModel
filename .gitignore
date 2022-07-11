@@ -27,6 +27,9 @@
 # track README.md
 !README.md
 
+# track LICENSE
+!LICENSE
+
 # track test .txt files
 !*.txt
 
