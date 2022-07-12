@@ -35,7 +35,7 @@ $(all_targets) : $(all_source_files)
 
 # run
 run : $(all_targets)
-    $(all_targets)
+    ./$(all_targets)
 
 # system: affect how to clean and executable file name
 # value: windows/unix
