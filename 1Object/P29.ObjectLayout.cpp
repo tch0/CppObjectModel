@@ -106,6 +106,19 @@ vptr of VBase
 xv
 */
 
+class VDerived2 : virtual public VBase
+{
+public:
+    double x;
+};
+/*
+normal virtual inheritance: 32bytes
+memory layout of VDerived2:
+vptr of VDerived2
+x
+vptr of VBase
+xv
+*/
 
 int main(int argc, char const *argv[])
 {
@@ -178,6 +191,17 @@ int main(int argc, char const *argv[])
         cout << "&d.y: " << &d.y << endl;
         cout << "&d.z: " << &d.z << endl;
         cout << "&d.xv: " << &d.xv << endl;
+    }
+
+    {
+        cout << endl;
+        VDerived2 d;
+        VBase* pb = &d;
+        cout << "sizeof(VDerived2): " << sizeof(VDerived2) << endl; // 32
+        cout << "&d: " << &d << endl;
+        cout << "pb: " << pb << endl;
+        cout << "&d.xv: " << &d.xv << endl;
+        cout << "&d.x: " << &d.x << endl;
     }
     return 0;
 }
