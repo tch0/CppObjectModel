@@ -15,7 +15,7 @@ CXXFLAGS +=
 RM = rm
 
 # final target: add your target here
-target = 
+target = inline
 
 # debug
 ifeq ($(debug), yes)
@@ -35,7 +35,7 @@ $(all_targets) : $(all_source_files)
 
 # run
 run : $(all_targets)
-	./$(all_targets)
+	$(all_targets)
 
 # system: affect how to clean and executable file name
 # value: windows/unix
