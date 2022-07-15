@@ -120,6 +120,27 @@ vptr of VBase
 xv
 */
 
+class BaseNew
+{
+public:
+    double x;
+};
+
+// import virtual table from DerivedNew
+class DerivedNew : public BaseNew
+{
+public:
+    virtual ~DerivedNew() {}
+    double y;
+};
+/*
+sizeof(DerivedNew): 24
+memory layout of DerivedNew:
+vptr of DerivedNew
+x                   <----- address of BaseNew subobject
+y
+*/
+
 int main(int argc, char const *argv[])
 {
     {
@@ -202,6 +223,18 @@ int main(int argc, char const *argv[])
         cout << "pb: " << pb << endl;
         cout << "&d.xv: " << &d.xv << endl;
         cout << "&d.x: " << &d.x << endl;
+    }
+
+    {
+        cout << endl;
+        DerivedNew d;
+        BaseNew* pb = &d;
+        cout << "sizeof(BaseNew): " << sizeof(BaseNew) << endl; // 8
+        cout << "sizeof(DerivedNew): " << sizeof(DerivedNew) << endl; // 24
+        cout << "&d: " << &d << endl;
+        cout << "pb: " << pb << endl;
+        cout << "&d.x: " << &d.x << endl;
+        cout << "&d.y: " << &d.y << endl;
     }
     return 0;
 }
