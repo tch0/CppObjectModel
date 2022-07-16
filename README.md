@@ -18,3 +18,4 @@
 - [1.关于对象](1Object)
 - [2.构造函数语义](2Constructors)
 - [3.数据成员语义](3DataMember)
+- [4.函数语义](4Function)
