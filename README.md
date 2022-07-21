@@ -19,3 +19,4 @@
 - [2.构造函数语义](2Constructors)
 - [3.数据成员语义](3DataMember)
 - [4.函数语义](4Function)
+- [5.构造、析构、拷贝语义](5CtorDtorAndCopy)
