@@ -21,3 +21,4 @@
 - [4.函数语义](4Function)
 - [5.构造、析构、拷贝语义](5CtorDtorAndCopy)
 - [6.运行时语义](6Runtime)
+- [7.对象模型中的剩余事物](7ExtraStuff)
